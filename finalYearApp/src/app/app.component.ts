@@ -16,11 +16,32 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
+    // {
+    //   title: 'List',
+    //   url: '/list',
+    //   icon: 'list'
+    // },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    }
+      title: 'Tunes',
+      url: '/tunes',
+      icon: 'ios-musical-note'
+    },
+    {
+      title: 'Recordings',
+      url: '/recordings',
+      icon: 'ios-microphone'
+    },
+    {
+      title: 'Statistics',
+      url: '/statistics',
+      icon: 'ios-stats'
+    },
+    {
+      title: 'Events',
+      url: '/events',
+      icon: 'ios-beer'
+    },
+  
   ];
 
   constructor(
