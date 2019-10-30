@@ -5,26 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TunesPage } from './tunes.page';
-import { CustomTextPipe } from '../customtext.pipe';
+import { TuneInfoPage } from './tune-info.page';
+
 const routes: Routes = [
   {
     path: '',
-    component: TunesPage
+    component: TuneInfoPage
   }
 ];
 
 @NgModule({
   imports: [
-
     CommonModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [
-    TunesPage,
-    CustomTextPipe
-  ]
+  declarations: [TuneInfoPage]
 })
-export class TunesPageModule { }
+export class TuneInfoPageModule {}

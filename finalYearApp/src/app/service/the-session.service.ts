@@ -32,5 +32,22 @@ export class TheSessionService {
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
+  getTune(id): Observable<Tune[]> {
+    var item = 'tunes/' + id;
+    var url = this.baseUrl + item + this.jsonAppender;
+    return this.http.get<Tune[]>(url).pipe(
+      tap(res => console.log('All: ' + JSON.stringify(res))));
+  }
+
+  GetIssue(id): Observable<Tune[]> {
+    return this.http.get<Tune[]>(this.baseUrl +'tunes/'+ id + this.jsonAppender).pipe(
+      tap(res => console.log('All: ' + JSON.stringify(res))));
+  }
+
+  // getDetails(id) {
+  //   return this.http.get(`${this.baseUrl}${'tunes/'}${id}${this.jsonAppender}`);
+  // }
+
+
 
 }
