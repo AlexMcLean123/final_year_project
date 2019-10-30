@@ -11,17 +11,7 @@
 <ion-content>
   
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{Newest Sets of Tunes}</ion-card-title>
-    </ion-card-header>
-    <ion-card>
-        <ion-card-header>
-           <ion-card-subtitle> The Lark On The Strand, The Mooncoin. </ion-card-subtitle>
-          </ion-card-header>
-     
-        <ion-card-content> Made by Guillaume Cheriot one hour ago. </ion-card-content>
-    </ion-card>
+
     <ion-card>
         <ion-card-header>
             <ion-card-subtitle> Sharig, The Pipers Of Roguery, The Hunstsman.  </ion-card-subtitle>
@@ -50,7 +40,13 @@
   </ion-card>
 </ion-content> -->
 
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Tunes</ion-title>
+  </ion-toolbar>
+</ion-header> -->
 
+<!-- <ion-content>
 <div class="table-responsive">
   <table class="table" *ngIf ="tunes">
       <tbody>
@@ -60,4 +56,49 @@
           </tr>
       </tbody>
   </table>
-</div>
+</div> -->
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" align-self: center>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Newest Sets of Tunes</ion-card-title>
+          </ion-card-header>
+          <div>
+            <ion-card *ngFor="let tune of tunes">
+              <ion-card-header>
+                <ion-card-subtitle>{{tune.tune.name}}</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>Submitted by member: {{tune.member.name}} </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Popular Tunes</ion-card-title>
+          </ion-card-header>
+          <div>
+            <ion-card *ngFor="let tune of popTunes">
+              <ion-card-header>
+                <ion-card-subtitle>{{tune.name}}</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>Submitted by member: {{tune.member.name}} </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card>
+    <ion-card-header>
+     <button (click) = "presentModal()">
+       Open Modal
+     </button> 
+    </ion-card-header>
+  </ion-card>
+</ion-content> 

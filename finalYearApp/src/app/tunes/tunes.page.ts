@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TheSessionService } from '../service/the-session.service';
 import { Tune } from '../model/tune';
+import { ModalController } from '@ionic/angular';
+import { ModalPageComponent } from '../modal-page/modal-page.component';
 @Component({
   selector: 'app-tunes',
   templateUrl: './tunes.page.html',
@@ -8,8 +10,9 @@ import { Tune } from '../model/tune';
 })
 export class TunesPage implements OnInit {
   tunes: Tune[] = [];
+  popTunes: Tune[] = [];
 
-  constructor(private theSessionService: TheSessionService) {
+  constructor(private theSessionService: TheSessionService, private modal: ModalController) {
 
   }
 
@@ -20,16 +23,34 @@ export class TunesPage implements OnInit {
         this.tunes.push(tune);
       });
       console.log(this.tunes);
-    // this.tunes = JSON.parse(JSON.stringify(res));
-    //   console.log(this.tunes);
     }
 
     )
   }
 
+  getPopTunes() {
+    this.theSessionService.getPopTunes().subscribe(res => {
+      let tunage = res["tunes"];
+      tunage.forEach(tune => {
+        this.popTunes.push(tune);
+      });
+      console.log("hello" , this.popTunes);
+    }
+
+    )
+  }
+
+  // async presentModal() {
+  //   const modal = await this.modal.create({
+  //     component: ModalPageComponent
+  //   });
+  //   return await modal.present();
+  // }
+
 
   ngOnInit() {
     this.getTunes();
+    this.getPopTunes();
   }
 
 }
