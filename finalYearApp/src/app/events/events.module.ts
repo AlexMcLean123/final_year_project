@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { EventsPage } from './events.page';
+import { GoogleMapsComponent } from '../components/google-maps/google-maps.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EventsPage]
+  declarations: [
+    EventsPage,
+    GoogleMapsComponent
+  ]
 })
 export class EventsPageModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-google-maps',
@@ -6,9 +6,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./google-maps.component.scss'],
 })
 export class GoogleMapsComponent implements OnInit {
+  @ViewChild('map', { static: false }) mapElement: ElementRef;
 
-  constructor() { }
+  text: string;
+  map: any;
+  constructor() {
+    this.text = "hello World"
+  }
 
-  ngOnInit() {}
+  initMap() {
+    let coords = new google.maps.LatLng(45, 100);
+    let mapOptions: google.maps.MapOptions = {
+      center: coords,
+      zoom: 20,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+  }
+
+
+  ngAfterContentI() {
+    this.initMap();
+  }
+
+  ngOnInit() {
+
+  }
+
+
 
 }
+
+

@@ -74,7 +74,7 @@
       <ion-row>
         <ion-col *ngFor="let tune of popTunes" size=2>
           <ion-card [routerLink]="['/', 'tune-info', tune.id]">
-            <img src={{this.getColour()}} />
+            <img src={{getColour()}} />
             <ion-card-title>{{tune.name | CustomTextPipe }}</ion-card-title>
             <ion-card-content>
               <p>Submitted by member: {{tune.member.name}}</p>
@@ -91,7 +91,7 @@
       <ion-row>
         <ion-col *ngFor="let tune of tunes" size=2>
           <ion-card>
-            <img src={{this.getColour()}} />
+            <img src={{getColour()}} />
             <ion-card-title>{{tune.tune.name | CustomTextPipe }}</ion-card-title>
             <ion-card-content>
               <p>Submitted by member: {{tune.member.name}}</p>

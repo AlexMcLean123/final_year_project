@@ -7,12 +7,11 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GoogleMapsComponent
+    AppComponent
+    
   ],
   entryComponents: [],
   imports: [
