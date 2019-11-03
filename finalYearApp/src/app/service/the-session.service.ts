@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Tune } from '../model/tune';
 import { tap } from 'rxjs/operators';
+import { Session } from '../model/Session';
 @Injectable({
   providedIn: 'root'
 })
@@ -47,6 +48,11 @@ export class TheSessionService {
   // getDetails(id) {
   //   return this.http.get(`${this.baseUrl}${'tunes/'}${id}${this.jsonAppender}`);
   // }
+
+  getSessions(): Observable<Session[]> {
+    return this.http.get<Session[]>(this.baseUrl+'sessions/new'+ this.jsonAppender).pipe(
+      tap(res=> console.log('All: ' + JSON.stringify(res))));
+  }
 
 
 
