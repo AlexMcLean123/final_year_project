@@ -73,7 +73,7 @@
       </ion-card-header>
       <ion-row>
         <!-- removing the size will make it look ok on mobile -->
-        <ion-col *ngFor="let tune of popTunes">
+        <ion-col *ngFor="let tune of popTunes" size = 2>
           <ion-card [routerLink]="['/', 'tune-info', tune.id]">
             <img src="/assets/images/greenish.png" />
             <ion-card-title>{{tune.name | CustomTextPipe }}</ion-card-title>
@@ -90,7 +90,7 @@
         <ion-spinner name="crescent" *ngIf="tunes == 0"></ion-spinner>
       </ion-card-header>
       <ion-row>
-        <ion-col *ngFor="let tune of tunes">
+        <ion-col *ngFor="let tune of tunes" size =2>
           <ion-card>
             <img src="/assets/images/blueish.png" />
             <ion-card-title>{{tune.tune.name | CustomTextPipe }}</ion-card-title>

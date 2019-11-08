@@ -23,8 +23,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-    TunesPage,
-    CustomTextPipe
+    CustomTextPipe,
+    TunesPage
   ]
 })
 export class TunesPageModule { }
