@@ -1,11 +1,50 @@
 <ion-header>
-  <ion-toolbar color = "primary">
-    <ion-title>Tune Information{{ tuneInformation?.name }}</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Tune Information</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+
+
 <ion-card>
-  <ion-card-header></ion-card-header>
+  <ion-card-header>
+    <h2>Name: {{tuneInformation?.name| CustomTextPipe }}</h2>
+  </ion-card-header>
+
 </ion-card>
+
+<ion-content> 
+  <ion-card *ngFor = "let tune of tuneInformation?.settings">
+    <ion-card-content>
+      {{tune.abc}}
+      <div id="player"></div>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
+
+
+<!-- <ion-content padding>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let info of tuneInformation?.aliases">
+          <ion-card text-center>
+            <ion-card-title>{{info | CustomTextPipe }}</ion-card-title>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content> -->
+
+<!-- <ion-item>
+    <ion-label>Tune Name: {{tuneInformation?.name| CustomTextPipe }}</ion-label>
+    <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="View Aliases">
+      <ion-select-option *ngFor="let info of tuneInformation?.aliases"> {{info | CustomTextPipe }}
+          <ion-spinner name="crescent" *ngIf="info == 0"></ion-spinner>
+
+         </ion-select-option>
+    </ion-select>
+  </ion-item> -->
+

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Tune } from '../model/tune';
-import { tap } from 'rxjs/operators';
+import { tap, delay } from 'rxjs/operators';
 import { Session } from '../model/Session';
 @Injectable({
   providedIn: 'root'
@@ -42,7 +42,7 @@ export class TheSessionService {
 
   GetIssue(id): Observable<Tune[]> {
     return this.http.get<Tune[]>(this.baseUrl +'tunes/'+ id + this.jsonAppender).pipe(
-      tap(res => console.log('All: ' + JSON.stringify(res))));
+      tap(res => console.log('All: ' + JSON.stringify(res))),delay(1000));
   }
 
   // getDetails(id) {
@@ -53,6 +53,14 @@ export class TheSessionService {
     return this.http.get<Session[]>(this.baseUrl+'sessions/new'+ this.jsonAppender).pipe(
       tap(res=> console.log('All: ' + JSON.stringify(res))));
   }
+
+  getVideoID(name): Observable<any[]> {
+    let nameUri= encodeURI(name);
+    console.log(nameUri)
+    return this.http.get<any[]>('https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q='+ nameUri+'&type=video&videoDefinition=high&key=AIzaSyAzb2LyeEDe82S-rC5G58-Pc4dUrwmhEhA').pipe(
+      tap(res=> console.log('All: ' + JSON.stringify(res))));
+  }
+
 
 
 
