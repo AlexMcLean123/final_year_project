@@ -7,8 +7,10 @@
 
 
 <ion-card>
-  <ion-card-header>
+  <ion-card-header text-center>
     <h2>Name: {{tuneInformation?.name| CustomTextPipe }}</h2>
+    <div class="video-container" id="player"></div>
+
   </ion-card-header>
 
 </ion-card>
@@ -17,7 +19,6 @@
   <ion-card *ngFor = "let tune of tuneInformation?.settings">
     <ion-card-content>
       {{tune.abc}}
-      <div id="player"></div>
     </ion-card-content>
   </ion-card>
 
