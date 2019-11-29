@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let newsItem of news" size=2>
+        <ion-card href = "{{newsItem.url}}">
+          <img src="assets/news-icon.png" />
+          <ion-card-header>
+            <ion-card-subtitle>{{newsItem.source.name}}</ion-card-subtitle>
+            <ion-card-title>
+              {{newsItem.title}}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{newsItem.description}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

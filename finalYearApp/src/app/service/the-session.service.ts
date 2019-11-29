@@ -68,6 +68,13 @@ export class TheSessionService {
       tap(res=> console.log('All: ' + JSON.stringify(res))));
   }
 
+  getNews(topic): Observable<any[]>{
+    let topicUri = encodeURI(topic)
+    console.log(topicUri)
+    return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic+ '&token=bb2c0b8b824b77d3e04beb164add122e').pipe(
+      tap(res=> console.log('All: ' + JSON.stringify(res))));
+  } 
+
 
 
 

@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { TheSessionService } from '../service/the-session.service';
 
 @Component({
   selector: 'app-statistics',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticsPage implements OnInit {
 
+  constructor() {
+
+  }
 
   ngOnInit() {
 

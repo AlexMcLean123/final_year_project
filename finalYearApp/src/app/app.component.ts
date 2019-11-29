@@ -21,6 +21,11 @@ export class AppComponent {
       icon: 'ios-microphone'
     },
     {
+      title: 'News',
+      url: '/news',
+      icon: 'md-paper'
+    },
+    {
       title: 'Statistics',
       url: '/statistics',
       icon: 'ios-stats'
