@@ -68,7 +68,7 @@ export class TuneInfoPage implements OnInit {
 
     setTimeout(() => {
       let name = this.tuneInformation.name.replace(/[^a-zA-Z ]/g, "")
-      this.getVideo(name)
+      this.getVideo(name + "irish trad music")
       console.log("HELLO tunes", this.tuneInformation)
     }, 2000)
 

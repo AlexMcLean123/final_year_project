@@ -16,12 +16,40 @@
 
 </ion-card>
 
-<ion-content> 
-  <ion-card *ngFor = "let tune of tuneInformation?.settings">
-    <ion-card-content>
-      {{tune.abc}}
-    </ion-card-content>
-  </ion-card>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Aliases</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let tune of tuneInformation?.aliases">
+              <ion-label> {{tune | CustomTextPipe}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>Notes</ion-card-header>
+            <ion-card *ngFor="let tune of tuneInformation?.settings">
+                <ion-card-content>
+                  {{tune.abc}}
+                </ion-card-content>
+              </ion-card>
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+
+
+
 
 </ion-content>
 
@@ -49,4 +77,3 @@
          </ion-select-option>
     </ion-select>
   </ion-item> -->
-
