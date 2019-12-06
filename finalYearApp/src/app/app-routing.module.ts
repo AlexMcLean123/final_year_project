@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { DoChartComponent } from './components/do-chart/do-chart.component';
 
 const routes: Routes = [
   {
@@ -19,7 +21,11 @@ const routes: Routes = [
   { path: 'recordings', loadChildren: './recordings/recordings.module#RecordingsPageModule' },
   { path: 'statistics', loadChildren: './statistics/statistics.module#StatisticsPageModule' },
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
-  { path: 'tune-info/:id', loadChildren: './tune-info/tune-info.module#TuneInfoPageModule' },  { path: 'news', loadChildren: './news/news.module#NewsPageModule' }
+  { path: 'tune-info/:id', loadChildren: './tune-info/tune-info.module#TuneInfoPageModule' },
+  { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
+  {path: 'bar-chart', component: BarChartComponent },
+  {path: 'do-chart', component: DoChartComponent }
+
 
 
 ];

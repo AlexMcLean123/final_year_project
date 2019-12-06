@@ -15,6 +15,7 @@ export class TheSessionService {
   jsonAppender: String;
   num35: String;
   num10: String;
+
   constructor(private http: HttpClient) {
     this.baseUrl = 'https://thesession.org/';
     this.jsonAppender = '?format=json';
@@ -62,6 +63,17 @@ export class TheSessionService {
     let topicUri = encodeURI(topic)
     console.log(topicUri)
     return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic + '&token=bb2c0b8b824b77d3e04beb164add122e').pipe(
+      tap(res => console.log('All: ' + JSON.stringify(res))));
+  }
+
+  getStats(): Observable<any[]>{
+    return this.http.get<any[]>('./assets/tunes.json').pipe(
+      tap(res => console.log('All: ' + JSON.stringify(res))));
+  }
+
+  
+  getEventStats(): Observable<any[]>{
+    return this.http.get<any[]>('./assets/events.json').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 

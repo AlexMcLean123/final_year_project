@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TheSessionService } from '../service/the-session.service';
-import { Tune } from '../model/Tune';
-import { TuneDetail } from '../model/TuneDetail';
+
 
 @Component({
   selector: 'app-tune-info',
@@ -11,7 +10,6 @@ import { TuneDetail } from '../model/TuneDetail';
 })
 
 export class TuneInfoPage implements OnInit {
-
   title = 'dummyApp-YTIFrameAPI';
 
   /* 1. Some required variables which will be used by YT API*/
@@ -83,7 +81,7 @@ export class TuneInfoPage implements OnInit {
     this.player = new window['YT'].Player('player', {
       videoId: this.video,
       playerVars: {
-        autoplay: 1,
+        autoplay: 0,
         modestbranding: 1,
         controls: 1,
         disablekb: 1,
@@ -150,14 +148,3 @@ export class TuneInfoPage implements OnInit {
   };
 
 }
-
-
-
-
-
-
-//5a8a48d7a6a910d48fcdf56b12c2701c
-//api key
-
-//secret key
-// ad84229f9b71d8feb13883e2099d75a9

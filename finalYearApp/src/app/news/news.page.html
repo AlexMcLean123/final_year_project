@@ -1,32 +1,37 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
       News
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col *ngFor="let newsItem of news" size=2>
-        <ion-card href = "{{newsItem.url}}">
-          <!-- <img src="assets/news-icon.png" /> -->
-          <!-- <img src = {{newsItem.image}} src = "assets/news-icon.png" class="img"/> -->
-         <img [src]="newsItem.image ? newsItem.image : 'assets/news-icon.png'"/>
-          <ion-card-header>
-            <ion-card-subtitle>{{newsItem.source.name}}</ion-card-subtitle>
-            <ion-card-title>
-              {{newsItem.title}}
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            {{newsItem.description}}
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+    <ion-card class="blue-card">
+      <ion-card-header>
+        <ion-card-title class = "center-text" >News</ion-card-title>
+      </ion-card-header>
+      <ion-row>
+        <ion-col *ngFor="let newsItem of news" size=2>
+          <ion-card href="{{newsItem.url}}" class ="white">
+            <!-- <img src="assets/news-icon.png" /> -->
+            <!-- <img src = {{newsItem.image}} src = "assets/news-icon.png" class="img"/> -->
+            <img [src]="newsItem.image ? newsItem.image : 'assets/news-icon.png'" />
+            <ion-card-header>
+              <ion-card-subtitle>{{newsItem.source.name}}</ion-card-subtitle>
+              <ion-card-title>
+                {{newsItem.title}}
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{newsItem.description}}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
   </ion-grid>
 
 </ion-content>
-

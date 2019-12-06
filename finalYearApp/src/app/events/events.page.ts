@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Map, latLng, tileLayer, Layer, L } from 'leaflet';
-import { Icon, icon, Marker, marker } from 'leaflet';
-import { Session } from '../model/Session';
+import { Map, tileLayer } from 'leaflet';
+import { Icon, icon, marker } from 'leaflet';
 import { TheSessionService } from '../service/the-session.service';
 
 @Component({
@@ -16,11 +15,11 @@ export class EventsPage implements OnInit {
 
 
   private defaultIcon: Icon = icon({
-    iconUrl: 'assets/marker-icon.png',
+    iconUrl: 'assets/marker-icon2.png',
     shadowUrl: 'assets/marker-shadow.png',
-    iconSize: [41, 51], // => random values you have to choose right ones for your case
+    iconSize: [40, 40], // => random values you have to choose right ones for your case
     iconAnchor: [20, 51],
-    popupAnchor: [0, -40]
+    popupAnchor: [0, -50]
   });
 
   constructor(private service: TheSessionService) {
@@ -56,17 +55,8 @@ export class EventsPage implements OnInit {
     setTimeout(() => {
       this.map.invalidateSize();
     }, 2000);
-
-    // setTimeout(() =>{
-    //   this.sessions.forEach(element => {
-    //     var location = "Theres a session at " + element.venue.name + " in " + element.area.name + ", " + element.country.name + "!";
-    //     marker([element.latitude, element.longitude], {icon: this.defaultIcon}).addTo(this.map)
-    //       .bindPopup(location)
-    //       .openPopup()
-    //   });
     console.log("array", this.sessions)
     console.log("length", this.sessions.length)
-    // }, 1000)
 
   }
 

@@ -40,10 +40,23 @@ export class TunesPage implements OnInit {
   }
 
   getColour(): string{
-    let myCols: string[] = ["/assets/images/reddish.png", "/assets/images/blueish.png", "/assets/images/greenish.png", "/assets/images/brownish.png"];
-    var x = Math.floor((Math.random() * 3) + 1);
+    let myCols: string[] = [
+      "/assets/icons/bagpipe.png",
+      "/assets/icons/box.png",
+      "/assets/icons/drum.png", 
+      "/assets/icons/flute.png", 
+      "/assets/icons/harmonica.png", 
+      "/assets/icons/harp.png",
+      "/assets/icons/mandalin.png",
+      "/assets/icons/spoon.png",
+      "/assets/icons/viiolin.png",
+      "/assets/icons/whistle2.png",
+      "/assets/icons/whistle3.png",
+      "/assets/icons/yoke.png"
+    ];
+    var x = Math.floor((Math.random() * 11));
     var ans = myCols[x];
-    return ans;
+    return ans
   }
 
   ngOnInit() {

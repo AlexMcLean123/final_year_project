@@ -1,11 +1,69 @@
-<ion-header>
-    <ion-toolbar color ="primary">
-        <ion-title>Statistics</ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content>
-<ion-card>
-    <canvas id="bar-chart" width="1000" height="450"></canvas>
-</ion-card>
+    <ion-card class="blue-card">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-card class="white">
+                        <ion-card-header>
+                            <ion-item>
+                                <ion-icon name="stats" slot="start"></ion-icon>
+                                <ion-label>Bar chart</ion-label>
+                                <ion-button (click)="updateBar()" fill="outline" slot="end">View Chart</ion-button>
+                            </ion-item>
+                            <ion-card-title>Key Distribution of tunes</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            View the distribtuion of keys from a dataset of over 34,000 traditional irish songs.
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col>
+                    <ion-card class="white">
+                        <ion-card-header>
+                            <ion-item>
+                                <ion-icon name="radio-button-off" slot="start"></ion-icon>
+                                <ion-label>Doughnut chart</ion-label>
+                                <ion-button (click)="updateDo()" fill="outline" slot="end">View Chart</ion-button>
+                            </ion-item>
+                            <ion-card-title>Type Distribution of tunes</ion-card-title>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            View the different types of tunes such as polka, jig etc from a dataset of over 34,000
+                            traditional irish songs.
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col>
+                    <ion-card class="white">
+                        <ion-card-header>
+                            <ion-item>
+                                <ion-icon name="pie" slot="start"></ion-icon>
+                                <ion-label>Polar Chart</ion-label>
+                                <ion-button (click)="updateDo()" fill="outline" slot="end">View Chart</ion-button>
+                            </ion-item>
+                            <ion-card-title>Country Distribution of Events</ion-card-title>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            View the different countries that host events from a dataset of over 7,500 events held all over the world.
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+
+
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <app-polar-chart></app-polar-chart>
+    
+    <div padding *ngIf="displayDo">
+        <app-do-chart></app-do-chart>
+    </div>
+
+    <div padding *ngIf="display">
+        <app-bar-chart></app-bar-chart>
+    </div>
 </ion-content>

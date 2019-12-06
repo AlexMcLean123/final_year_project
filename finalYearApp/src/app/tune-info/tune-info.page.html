@@ -1,15 +1,8 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Tune Information
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 
-
-<ion-card>
+<ion-card class = "blue-card">
   <ion-card-header text-center>
-    <h2>Name: {{tuneInformation?.name| CustomTextPipe }}</h2>
+    <h2>{{tuneInformation?.name| CustomTextPipe }}</h2>
     <div class="video-container" id="player"></div>
 
   </ion-card-header>
@@ -20,8 +13,8 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-card>
-          <ion-list>
+        <ion-card >
+          <ion-list class ="blue-card">
             <ion-list-header>
               <ion-label>Aliases</ion-label>
             </ion-list-header>
@@ -32,9 +25,9 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card>
+        <ion-card class ="blue-card">
           <ion-card-header>Notes</ion-card-header>
-            <ion-card *ngFor="let tune of tuneInformation?.settings">
+            <ion-card class ="white" *ngFor="let tune of tuneInformation?.settings">
                 <ion-card-content>
                   {{tune.abc}}
                 </ion-card-content>
