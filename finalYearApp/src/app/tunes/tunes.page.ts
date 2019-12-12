@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 export class TunesPage implements OnInit {
   tunes: Tune[] = [];
   popTunes: Tune[] = [];
- 
+  ans: String [] = [];
   constructor(private theSessionService: TheSessionService, private router: RouterModule) {
 
   }
@@ -39,7 +39,7 @@ export class TunesPage implements OnInit {
     )
   }
 
-  getColour(): string{
+  getColour(){
     let myCols: string[] = [
       "/assets/icons/bagpipe.png",
       "/assets/icons/box.png",
@@ -54,12 +54,14 @@ export class TunesPage implements OnInit {
       "/assets/icons/whistle3.png",
       "/assets/icons/yoke.png"
     ];
-    var x = Math.floor((Math.random() * 11));
-    var ans = myCols[x];
-    return ans
+    for(var i =0; i<50; i++){
+      var x = Math.floor((Math.random() * 11));
+      this.ans.push(myCols[x])
+    }
   }
 
   ngOnInit() {
+    this.getColour();
     this.getTunes();
     this.getPopTunes();
   }

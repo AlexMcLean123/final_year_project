@@ -16,9 +16,9 @@
       </ion-card-header>
       <ion-row>
         <!-- removing the size will make it look ok on mobile -->
-        <ion-col *ngFor="let tune of popTunes" size=2>
+        <ion-col *ngFor="let tune of popTunes;let i = index" size=2>
           <ion-card [routerLink]="['/', 'tune-info', tune.id]" padding class = "white">
-            <img src= {{this.getColour()}} />
+            <img src= {{ans[i]}} />
             <ion-card-title>{{tune.name | CustomTextPipe }}</ion-card-title>
             <ion-card-content>
               <p>Submitted by member: {{tune.member.name}}</p>

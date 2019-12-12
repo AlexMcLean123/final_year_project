@@ -42,7 +42,7 @@
                             <ion-item>
                                 <ion-icon name="pie" slot="start"></ion-icon>
                                 <ion-label>Polar Chart</ion-label>
-                                <ion-button (click)="updateDo()" fill="outline" slot="end">View Chart</ion-button>
+                                <ion-button (click)="updatePie()" fill="outline" slot="end">View Chart</ion-button>
                             </ion-item>
                             <ion-card-title>Country Distribution of Events</ion-card-title>
                         </ion-card-header>
@@ -57,7 +57,6 @@
             </ion-row>
         </ion-grid>
     </ion-card>
-    <app-polar-chart></app-polar-chart>
     
     <div padding *ngIf="displayDo">
         <app-do-chart></app-do-chart>
@@ -65,5 +64,9 @@
 
     <div padding *ngIf="display">
         <app-bar-chart></app-bar-chart>
+    </div>
+
+    <div padding *ngIf="displayPi">
+        <app-polar-chart></app-polar-chart>
     </div>
 </ion-content>

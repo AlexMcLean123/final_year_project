@@ -16,26 +16,46 @@ export class StatisticsPage implements OnInit {
 
 
   ngOnInit() {
+
   }
 
   display = false;
   displayDo = false
-  updateBar(){
-     this.display = !this.display;
-     if(this.displayDo){
-       this.displayDo = !this.displayDo
-     }
-     console.log("clicked")
-  }
+  displayPi = false;
 
-  updateDo(){
-    this.displayDo = !this.displayDo;
-    if(this.display){
-        this.display = !this.display
+  updateBar() {
+    this.display = true;
+    if (this.displayDo) {
+      this.displayDo = false
     }
-    console.log("clicked")
- }
-
-
+    if (this.displayPi) {
+      this.displayPi = false
+    }
+    console.log("clicked bar")
   }
+
+  updateDo() {
+    this.displayDo = true
+    if (this.display) {
+      this.display = false
+    }
+    if(this.displayPi) {
+      this.displayPi = false;
+    }
+    console.log("clicked do component")
+  }
+
+  updatePie() {
+    this.displayPi = true;
+    if (this.display) {
+      this.display = false
+    }
+    if (this.displayDo) {
+      this.displayDo = false
+    }
+    console.log("clicked polar ")
+  }
+
+
+}
 
