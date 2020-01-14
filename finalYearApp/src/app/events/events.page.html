@@ -5,34 +5,34 @@
     </ion-title>
   </ion-toolbar>
 </ion-header> -->
-
+<ion-card class ="blue-card">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col text-center>
+            <ion-button (click)="onClickSession()" color="medium" >
+              <ion-icon name="microphone" padding ></ion-icon>
+               Sessions
+            </ion-button>
+          </ion-col>
+          <!-- <ion-col text-center>
+                <h1>Click to View</h1>
+            </ion-col> -->
+          <ion-col text-center>
+            <ion-button (click)="onClickEvent()" color="medium">
+              <ion-icon name="musical-notes" padding ></ion-icon>
+               Events
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 <ion-card id="mapId" style="width: 98.5%; height: 40%">
 
 </ion-card>
 
-<ion-card class ="blue-card">
-  <ion-card-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col text-center>
-          <ion-button (click)="onClickSession()" color="secondary" >
-            <ion-icon name="microphone" padding ></ion-icon>
-             Sessions
-          </ion-button>
-        </ion-col>
-        <!-- <ion-col text-center>
-              <h1>Click to View</h1>
-          </ion-col> -->
-        <ion-col text-center>
-          <ion-button (click)="onClickEvent()" color="tertiary">
-            <ion-icon name="musical-notes" padding ></ion-icon>
-             Events
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card-content>
-</ion-card>
+
 
 <ion-content padding>
   <p></p>

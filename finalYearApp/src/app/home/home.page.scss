@@ -13,5 +13,13 @@
 
 
 ion-content.background{
-  --background: url(../../assets/mybackg.png) 0 0/100% 100% no-repeat;
+  --background: url(../../assets/background-tradfest1.jpg) 0 0/100% 100% no-repeat;
+}
+
+ion-grid {
+  height: 100%;
+
+  ion-row {
+    height: 33.33%;
+  }
 }
