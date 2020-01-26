@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TheSessionService } from '../service/the-session.service';
-
+import { AbcFormatter } from '../AbcFormatter';
+import abcjs from 'abcjs'
 
 @Component({
   selector: 'app-tune-info',
@@ -11,7 +12,8 @@ import { TheSessionService } from '../service/the-session.service';
 
 export class TuneInfoPage implements OnInit {
   title = 'dummyApp-YTIFrameAPI';
-
+  abcFormatter: AbcFormatter;
+  abc: any;
   /* 1. Some required variables which will be used by YT API*/
   public YT: any;
   public video: any;
@@ -24,7 +26,7 @@ export class TuneInfoPage implements OnInit {
   videoId: any[] = [];
 
   constructor(private activatedRoute: ActivatedRoute, private service: TheSessionService) { 
-
+    this.abcFormatter  = new AbcFormatter();
   }
 
  init() {
@@ -69,6 +71,11 @@ export class TuneInfoPage implements OnInit {
       this.getVideo(name + "irish trad music")
       console.log("HELLO tunes", this.tuneInformation)
     }, 2000)
+
+    setTimeout(() => {
+      const tune4 = this.constructAbc();
+      abcjs.renderAbc("paper1", tune4);
+    }, 1800)
 
     setTimeout(() => {
       this.video = this.videoId[0].id.videoId
@@ -146,5 +153,30 @@ export class TuneInfoPage implements OnInit {
         break;
     };
   };
+  getMeasure(type) {
+    switch (type) {
+        case "jig": return "6/8";
+        case "slip jig": return "9/8";
+        case "reel": case "hornpipe": case "barndance": case "strathspey": return "4/4";
+        case "polka": return "2/4";
+        case "slide": return "12/8";
+        case "waltz": case "mazurka": return "3/4";
+        case "three-two": return "3/2";
+    }
+}
+
+  constructAbc(){
+    let name = this.tuneInformation.name.replace(/[^a-zA-Z ]/g, "")
+
+    this.abc = "X: 1\nT: " +
+    name +"\nM: " 
+    + this.getMeasure(this.tuneInformation.type) +"\nL: 1/8 \nK:"
+    + this.tuneInformation.settings[0].key +"\n"
+    + this.abcFormatter.format(this.tuneInformation.settings[0].abc)
+    console.log(this.abc)
+    return this.abc;
+  }
+    
+
 
 }

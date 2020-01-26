@@ -1,0 +1,74 @@
+<ion-card>
+    <ion-item color="light">
+      <ion-thumbnail slot="start">
+        <img src="/assets/png/{{events?.country.name}}.png">
+      </ion-thumbnail>
+      <ion-label>{{events?.country.name|CustomTextPipe}}</ion-label>
+    </ion-item>
+    <ion-card-header>
+      <ion-card-title>{{events?.venue.name|CustomTextPipe}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <!-- List of Text Items -->
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card class="white">
+              <ion-item>
+                <ion-icon padding name="md-mail"></ion-icon>
+                <ion-label> <a href="mailto:{{events?.venue.email}}">{{events?.venue.name |CustomTextPipe}} Email</a>
+                </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-icon padding name="md-globe"></ion-icon>
+                <ion-label> <a href="{{events?.venue.web}}">{{events?.venue.name|CustomTextPipe}} Website</a>
+                </ion-label>
+              </ion-item>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card class="white">
+              <ion-item>
+                <ion-icon padding name="md-home"></ion-icon>
+                <ion-label> Address
+                </ion-label>
+              </ion-item>
+              <ion-card-content padding>
+                <p>{{events?.venue.name}}</p>
+               <p>{{events?.town.name}},</p>
+                <p>County {{events?.area.name}},</p>
+                <p>{{events?.country.name}}</p>
+              </ion-card-content>
+            </ion-card>
+  
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+    </ion-card-content>
+  </ion-card>
+  <ion-card id="mapId" style="width: 98.5%; height: 30%"></ion-card>
+  
+  <ion-content>
+    <ion-card class="blue-card">
+      <ion-card-title padding>Comments</ion-card-title>
+  
+      <ion-card class="white" *ngFor="let comment of events?.comments">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="/assets/profile.png">
+          </ion-thumbnail>
+          <ion-label>{{comment.member.name}}</ion-label>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-title>{{comment.subject |CustomTextPipe}}</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+          {{comment.content}}
+        </ion-card-content>
+      </ion-card>
+    </ion-card>
+  
+  </ion-content>

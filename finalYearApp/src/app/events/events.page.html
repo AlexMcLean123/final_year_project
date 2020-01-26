@@ -1,10 +1,4 @@
-<!-- <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>
-      Map
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
+<!-- 
 <ion-card class ="blue-card">
     <ion-card-content>
       <ion-grid>
@@ -15,9 +9,6 @@
                Sessions
             </ion-button>
           </ion-col>
-          <!-- <ion-col text-center>
-                <h1>Click to View</h1>
-            </ion-col> -->
           <ion-col text-center>
             <ion-button (click)="onClickEvent()" color="medium">
               <ion-icon name="musical-notes" padding ></ion-icon>
@@ -36,4 +27,64 @@
 
 <ion-content padding>
   <p></p>
+</ion-content> -->
+
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Tunes
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<!-- <ion-card id="mapId" style="width: 98.5%; height: 40%">
+  </ion-card> -->
+  <ion-searchbar [(ngModel)]="searchText" placeholder ="Search by country"></ion-searchbar>
+
+<ion-content padded>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class ="blue-card">
+          <ion-card-header>
+            <ion-card-title class>Events</ion-card-title>
+            <ion-spinner name="crescent" *ngIf="events == 0"></ion-spinner>
+          </ion-card-header>
+          <ion-row>
+            <!-- removing the size will make it look ok on mobile -->
+            <ion-col *ngFor="let event of events | countryFilterPipe:searchText" size=4>
+              <ion-card [routerLink]="['/','event-info', event.id]" style ="text-align: center" padding class="white">
+                <ion-img padded src="/assets/png/{{event.country.name}}.png"></ion-img>
+                <ion-card-title padding>{{event.country.name}}</ion-card-title>
+                <ion-card-content>
+                  <p>{{event.town.name}}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card class="blue-card">
+          <ion-card-header>
+            <ion-card-title class>Sessions</ion-card-title>
+            <ion-spinner name="crescent" *ngIf="sessions == 0"></ion-spinner>
+          </ion-card-header>
+          <ion-row>
+            <!-- removing the size will make it look ok on mobile -->
+            <ion-col *ngFor="let session of sessions | countryFilterPipe:searchText" size=4>
+              <ion-card  [routerLink]="['/', 'map-info', session.id]" style ="text-align: center" padding class="white">
+                <ion-img src="/assets/png/{{session.country.name}}.png"></ion-img>
+                <ion-card-title padding>{{session.country.name}}</ion-card-title>
+                <ion-card-content>
+                  <p>{{session.town.name}}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

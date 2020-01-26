@@ -15,12 +15,15 @@ export class TheSessionService {
   jsonAppender: String;
   num35: String;
   num10: String;
+  num50: String 
 
   constructor(private http: HttpClient) {
     this.baseUrl = 'https://thesession.org/';
     this.jsonAppender = '?format=json';
     this.num35 = "&perpage=35"
     this.num10 = "&perpage=10"
+    this.num50 = "&perpage=50"
+
   }
 
   getTunes(): Observable<Tune[]> {
@@ -43,12 +46,23 @@ export class TheSessionService {
   }
 
   getSessions(): Observable<Session[]> {
-    return this.http.get<Session[]>(this.baseUrl + 'sessions/new' + this.jsonAppender + this.num35).pipe(
+    return this.http.get<Session[]>(this.baseUrl + 'sessions/new' + this.jsonAppender + this.num50).pipe(
+      tap(res => console.log('All: ' + JSON.stringify(res))));
+  }
+
+  
+  getSession(id): Observable<Tune[]> {
+    return this.http.get<Tune[]>(this.baseUrl + 'sessions/' + id + this.jsonAppender).pipe(
+      tap(res => console.log('All: ' + JSON.stringify(res))));
+  }
+
+  getEvent(id): Observable<Tune[]> {
+    return this.http.get<Tune[]>(this.baseUrl + 'events/' + id + this.jsonAppender).pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
   getEvents(): Observable<any[]> {
-    return this.http.get<Session[]>(this.baseUrl + 'events/new' + this.jsonAppender + this.num35).pipe(
+    return this.http.get<Session[]>(this.baseUrl + 'events/new' + this.jsonAppender + this.num50).pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 

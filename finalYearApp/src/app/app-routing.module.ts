@@ -23,8 +23,12 @@ const routes: Routes = [
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   { path: 'tune-info/:id', loadChildren: './tune-info/tune-info.module#TuneInfoPageModule' },
   { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
-  {path: 'bar-chart', component: BarChartComponent },
-  {path: 'do-chart', component: DoChartComponent }
+  { path: 'bar-chart', component: BarChartComponent },
+  { path: 'do-chart', component: DoChartComponent },
+  { path: 'map-info/:id', loadChildren: './map-info/map-info.module#MapInfoPageModule' },
+  { path: 'event-info/:id', loadChildren: './event-info/event-info.module#EventInfoPageModule' }
+
+
 
 
 
@@ -36,4 +40,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
