@@ -62,11 +62,11 @@
           <ion-label>{{comment.member.name}}</ion-label>
         </ion-item>
         <ion-card-header>
-          <ion-card-title>{{comment.subject |CustomTextPipe}}</ion-card-title>
+          <ion-card-title>{{comment.subject | CustomTextPipe}}</ion-card-title>
         </ion-card-header>
   
         <ion-card-content>
-          {{comment.content}}
+          {{comment.content | CustomTextPipe}}
         </ion-card-content>
       </ion-card>
     </ion-card>

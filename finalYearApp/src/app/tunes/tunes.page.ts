@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 export class TunesPage implements OnInit {
   tunes: Tune[] = [];
   popTunes: Tune[] = [];
-  ans: String [] = [];
+  ans: String[] = [];
   constructor(private theSessionService: TheSessionService, private router: RouterModule) {
 
   }
@@ -24,7 +24,6 @@ export class TunesPage implements OnInit {
       });
       console.log(this.tunes);
     }
-
     )
   }
 
@@ -39,13 +38,13 @@ export class TunesPage implements OnInit {
     )
   }
 
-  getColour(){
+  getColour() {
     let myCols: string[] = [
       "/assets/icons/bagpipe.png",
       "/assets/icons/box.png",
-      "/assets/icons/drum.png", 
-      "/assets/icons/flute.png", 
-      "/assets/icons/harmonica.png", 
+      "/assets/icons/drum.png",
+      "/assets/icons/flute.png",
+      "/assets/icons/harmonica.png",
       "/assets/icons/harp.png",
       "/assets/icons/mandalin.png",
       "/assets/icons/spoon.png",
@@ -54,7 +53,7 @@ export class TunesPage implements OnInit {
       "/assets/icons/whistle3.png",
       "/assets/icons/yoke.png"
     ];
-    for(var i =0; i<50; i++){
+    for (var i = 0; i < 50; i++) {
       var x = Math.floor((Math.random() * 11));
       this.ans.push(myCols[x])
     }

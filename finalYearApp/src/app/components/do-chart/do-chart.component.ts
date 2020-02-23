@@ -36,7 +36,6 @@ export class DoChartComponent implements OnInit {
   }
 
   getCount(type) {
-    console.log("hello")
     var count = 0;
     for (var i = 0; i < this.types.length; i++) {
       if (this.types[i].type == type) {

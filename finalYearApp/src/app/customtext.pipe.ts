@@ -1,15 +1,15 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'CustomTextPipe'
 })
 
-export class CustomTextPipe implements PipeTransform{
+export class CustomTextPipe implements PipeTransform {
     transform(value: string): string {
-        if (!value){
-         return null   
-        } 
-        let newVal = value.replace(/[^a-zA-Z ]/g, "")
+        if (!value) {
+            return null
+        }
+        let newVal = value.replace("&#039;", "'")
         return newVal
-      }
+    }
 }

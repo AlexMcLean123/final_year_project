@@ -99,7 +99,6 @@ export class PolarChartComponent implements OnInit {
   }
 
   getYearCount(year) {
-    // console.log("this is events from getYearCount" + this.events)
     var count = 0;
     for (var i = 0; i < this.events.length; i++) {
       if (this.events[i].dtstart.match(year + "-*-* *:*:*")) {
@@ -110,7 +109,6 @@ export class PolarChartComponent implements OnInit {
   }
 
   getCount(country) {
-    // console.log("this is events from getCount" + this.events)
     var count = 0;
     for (var i = 0; i < this.events.length; i++) {
       if (this.events[i].country == country) {

@@ -21,7 +21,4 @@ describe('MapInfoPage', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

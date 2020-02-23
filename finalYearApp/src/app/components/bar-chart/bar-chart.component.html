@@ -1,6 +1,12 @@
-    <ion-card>
-            <ion-card-title>
-                    <ion-spinner name="crescent" *ngIf="keys == 0"></ion-spinner>
-            </ion-card-title>
-        <canvas id="bar-chart" width="1000" height="450"></canvas>
-    </ion-card>
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-card>
+                <canvas id="bar-chart"></canvas>
+            </ion-card>
+        </ion-col>
+        <ion-col>
+            <app-do-chart></app-do-chart>
+        </ion-col>
+    </ion-row>
+</ion-grid>

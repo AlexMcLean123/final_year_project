@@ -6,22 +6,55 @@
           <ion-title padding> <img src='../../assets/smalllogo.jpg'></ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
+      <ion-content style="text-align: center">
+        <ion-grid>
+
+          <ion-row>
+            <ion-item class = "myBorder" padding id="tunes" [routerDirection]="'root'" routerLink="/tunes">
+              <ion-icon slot="start" name="ios-musical-note"></ion-icon>
+              <h1>Tunes</h1>
             </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-        <ion-card>
+          </ion-row>
+
+          <ion-row>
+            <ion-item class = "myBorder" padding id="news" [routerDirection]="'root'" routerLink="/news">
+              <ion-icon slot="start" name="md-paper"></ion-icon>
+              <h1>News</h1>
+            </ion-item>
+          </ion-row>
+
+          <ion-row>
+            <ion-item class = "myBorder" padding id="stats" [routerDirection]="'root'" routerLink="/statistics">
+              <ion-icon slot="start" name="ios-stats"></ion-icon>
+              <h1>Statistics</h1>
+            </ion-item>
+          </ion-row>
+
+          <ion-row>
+            <ion-item class = "myBorder" padding id="map" [routerDirection]="'root'" routerLink="/events">
+              <ion-icon slot="start" name="ios-map"></ion-icon>
+              <h1>Events and Sessions</h1>
+            </ion-item>
+          </ion-row>
+
+        </ion-grid>
+
+        <!-- <ion-card [routerLink]="['/', 'tune-info', tune.id]" padding class = "white">
+          <img src= {{ans[i]}} />
+          <ion-card-title>{{tune.name | CustomTextPipe }}</ion-card-title>
           <ion-card-content>
-            <p>Hello</p>
+            <p>Submitted by member: {{tune.member.name}}</p>
           </ion-card-content>
-        </ion-card>
+        </ion-card> -->
+
+        <!-- <ion-item id="recordings" [routerDirection]="'root'" routerLink="/recordings">
+              <ion-icon slot="start" name="ios-microphone"></ion-icon>
+              <ion-label>
+                Recordings
+              </ion-label>
+            </ion-item> -->
+
+
       </ion-content>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
