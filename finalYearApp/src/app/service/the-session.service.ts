@@ -28,7 +28,7 @@ export class TheSessionService {
 
   getTunes(): Observable<Tune[]> {
     var item = 'tunes/new';
-    var url = this.baseUrl + item + this.jsonAppender + this.num35;
+    var url = this.baseUrl + item + this.jsonAppender + this.num10;
     return this.http.get<Tune[]>(url).pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
@@ -76,18 +76,18 @@ export class TheSessionService {
   getNews(topic): Observable<any[]> {
     let topicUri = encodeURI(topic)
     console.log(topicUri)
-    return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic + '&token=bb2c0b8b824b77d3e04beb164add122e').pipe(
+    return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic +'&image=required'+ '&token=bb2c0b8b824b77d3e04beb164add122e').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
   getStats(): Observable<any[]>{
-    return this.http.get<any[]>('./assets/tunes.json').pipe(
+    return this.http.get<any[]>('./assets/tunes1.json').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
   
   getEventStats(): Observable<any[]>{
-    return this.http.get<any[]>('./assets/events.json').pipe(
+    return this.http.get<any[]>('./assets/events1.json').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 

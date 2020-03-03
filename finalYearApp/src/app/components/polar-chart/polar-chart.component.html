@@ -1,12 +1,14 @@
 <ion-grid>
     <ion-row>
         <ion-col size="6">
-            <ion-card>
-                <canvas id="radar-chart"></canvas>
+            <ion-card style="height: 400px;">
+                <canvas [hidden] = "!display" (click) = "updatePie()" id="radar-chart"></canvas>
+                <canvas [hidden] = "!displayRest" (click) = "updatePie()" id="radar-chart-rest"></canvas>
             </ion-card>
+
         </ion-col>
         <ion-col size="6">
-            <ion-card>
+            <ion-card style="height: 400px;">
                 <canvas id="line-chart"></canvas>
             </ion-card>
         </ion-col>
@@ -14,7 +16,7 @@
     <ion-row>
         <ion-col size="12">
             <div style="height: 400px;">
-                <canvas id="bar-chart"></canvas>
+                <canvas padding id="bar-chart"></canvas>
             </div>
         </ion-col>
     </ion-row>

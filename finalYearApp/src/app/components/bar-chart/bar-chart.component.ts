@@ -62,15 +62,12 @@ export class BarChartComponent implements OnInit {
       this.Emajor = this.getCount("Emajor")
       this.Cmajor = this.getCount("Cmajor")
       this.Fmajor = this.getCount("Fmajor")
-
       this.Bmixolydian = this.getCount("Bmixolydian")
       this.Dmixolydian = this.getCount("Dmixolydian")
       this.Amixolydian = this.getCount("Amixolydian")
-
       this.Adorian = this.getCount("Adorian")
       this.Edorian = this.getCount("Edorian")
       this.Fdorian = this.getCount("Fdorian")
-
       this.Eminor = this.getCount("Eminor")
       this.Dminor = this.getCount("Dminor")
       this.Bminor = this.getCount("Bminor")
@@ -105,28 +102,46 @@ export class BarChartComponent implements OnInit {
           datasets: [
             {
               label: "Key",
-              backgroundColor: ["#a83232", "#ed7c4c", "#8ca832", "#e8c3b9", "#32a871",
-                "#32a8a6", "#3263a8", "#3632a8", "#6732a8", "#8332a8",
-                "#a832a4", "#a83275", "#a8325f", "#a83234", "#a85232", "#ed9d4c","#eaed4c", "#87ed4c"],
+              backgroundColor: [
+                "#34eb5c",
+                "#34eb89",
+                "#34eba2",
+                "#34ebb4",
+                "#34ebc6",
+                "#34ebdc",
+                "#34e5eb",
+                "#34cdeb",
+                "#34b7eb",
+                "#3499eb",
+                "#3489eb",
+                "#347deb",
+                "#346beb",
+                "#3459eb",
+                "#344ceb",
+                "#3437eb",
+                "#4c34eb",
+                "#5634eb",
+                "#6234eb"
+              ],
               data: [
-              this.Dmajor,
-              this.Gmajor,
-              this.Amajor,
-              this.Emajor,
-              this.Cmajor,
-              this.Fmajor,
-              this.Bmixolydian,
-              this.Dmixolydian,
-              this.Amixolydian,
-              this.Adorian,
-              this.Edorian,
-              this.Fdorian,
-              this.Eminor,
-              this.Dminor,
-              this.Bminor,
-              this.Aminor,
-              this.Cmajor,
-              this.Gminor
+                this.Dmajor,
+                this.Gmajor,
+                this.Amajor,
+                this.Emajor,
+                this.Cmajor,
+                this.Fmajor,
+                this.Bmixolydian,
+                this.Dmixolydian,
+                this.Amixolydian,
+                this.Adorian,
+                this.Edorian,
+                this.Fdorian,
+                this.Eminor,
+                this.Dminor,
+                this.Bminor,
+                this.Aminor,
+                this.Cmajor,
+                this.Gminor
               ]
             }
           ]

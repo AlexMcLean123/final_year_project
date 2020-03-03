@@ -86,9 +86,19 @@ export class DoChartComponent implements OnInit {
           datasets: [
             {
               label: "Key",
-              backgroundColor: ["#ff3838", "#ffc738", "#d4ff38", "#66ff38", "#38ff9f",
-                "#38ffee", "#38afff", "#384fff", "#8138ff", "#d138ff",
-                "#ff38c3"
+              backgroundColor: [
+                "#bdeb34",
+                "#93eb34",
+                "#7aeb34",
+                "#5feb34",
+                "#40eb34",
+                "#34eb49",
+                "#34eb65",
+                "#34eb7d",
+                "#34eba2",
+                "#34ebba",
+                "#34ebd6",
+                
               ],
               data: [
                 this.noJigs, this.noReel, this.noSlipJig, this.noHornPipe, this.noWaltz, this.noSlide,

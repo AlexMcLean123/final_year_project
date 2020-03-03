@@ -1,8 +1,10 @@
+import { Chart } from 'chart.js';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TheSessionService } from '../service/the-session.service';
 import { AbcFormatter } from '../AbcFormatter';
 import abcjs from 'abcjs'
+import { CustomTextPipe } from '../customtext.pipe';
 
 @Component({
   selector: 'app-tune-info',
@@ -23,13 +25,15 @@ export class TuneInfoPage implements OnInit {
   isRestricted = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   tuneInformation: any;
+  tunebooks: number;
   videoId: any[] = [];
-
-  constructor(private activatedRoute: ActivatedRoute, private service: TheSessionService) { 
-    this.abcFormatter  = new AbcFormatter();
+  displayNotes = true;
+  displayBar = false;
+  constructor(private activatedRoute: ActivatedRoute, private service: TheSessionService) {
+    this.abcFormatter = new AbcFormatter();
   }
 
- init() {
+  init() {
     // Return if Player is already created
     if (window['YT']) {
       this.startVideo();
@@ -47,8 +51,24 @@ export class TuneInfoPage implements OnInit {
   getTune(id) {
     this.service.GetIssue(id).subscribe(tune => {
       this.tuneInformation = tune;
-      console.log(this.tuneInformation)
+      console.log(this.tuneInformation.tunebooks)
+      console.log(this.tuneInformation.recordings)
+      console.log(this.tuneInformation.collections)
+
+
     })
+  }
+
+  updateDiv() {
+    if (this.displayNotes) {
+      this.displayNotes = false
+      this.displayBar = true
+      console.log("rest = " + this.displayNotes + " display = " + this.displayBar)
+    }
+    else {
+      this.displayNotes = true
+      this.displayBar = false
+    }
   }
 
   getVideo(name) {
@@ -68,7 +88,7 @@ export class TuneInfoPage implements OnInit {
 
     setTimeout(() => {
       let name = this.tuneInformation.name.replace(/[^a-zA-Z ]/g, "")
-      this.getVideo(name + "irish trad music")
+      this.getVideo(name + " trad song")
       console.log("HELLO tunes", this.tuneInformation)
     }, 2000)
 
@@ -81,6 +101,42 @@ export class TuneInfoPage implements OnInit {
       this.video = this.videoId[0].id.videoId
       this.init()
     }, 3000)
+
+    setTimeout(() => {
+      new Chart(document.getElementById("bar-chart"), {
+        type: 'bar',
+        data: {
+          labels: [
+            "TuneBooks",
+            "Collections",
+            "Recordings"
+          ],
+          datasets: [
+            {
+              label: "Key",
+              backgroundColor: [
+                "#42f5c2",
+                "#42c5f5",
+                "#ff5252"
+              ],
+              data: [
+                this.tuneInformation.tunebooks/100,
+                this.tuneInformation.collections,
+                this.tuneInformation.recordings
+              ]
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'TuneBooks, Collections and Recordings'
+          }
+        }
+      });
+    }, 3000)
+
   }
 
   startVideo() {
@@ -155,28 +211,29 @@ export class TuneInfoPage implements OnInit {
   };
   getMeasure(type) {
     switch (type) {
-        case "jig": return "6/8";
-        case "slip jig": return "9/8";
-        case "reel": case "hornpipe": case "barndance": case "strathspey": return "4/4";
-        case "polka": return "2/4";
-        case "slide": return "12/8";
-        case "waltz": case "mazurka": return "3/4";
-        case "three-two": return "3/2";
+      case "jig": return "6/8";
+      case "slip jig": return "9/8";
+      case "reel": case "hornpipe": case "barndance": case "strathspey": return "4/4";
+      case "polka": return "2/4";
+      case "slide": return "12/8";
+      case "waltz": case "mazurka": return "3/4";
+      case "three-two": return "3/2";
     }
-}
+  }
 
-  constructAbc(){
+  constructAbc() {
     let name = this.tuneInformation.name.replace(/[^a-zA-Z ]/g, "")
 
     this.abc = "X: 1\nT: " +
-    name +"\nM: " 
-    + this.getMeasure(this.tuneInformation.type) +"\nL: 1/8 \nK:"
-    + this.tuneInformation.settings[0].key +"\n"
-    + this.abcFormatter.format(this.tuneInformation.settings[0].abc)
+      name + "\nM: "
+      + this.getMeasure(this.tuneInformation.type) + "\nL: 1/8 \nK:"
+      + this.tuneInformation.settings[0].key + "\n"
+      + this.abcFormatter.format(this.tuneInformation.settings[0].abc)
     console.log(this.abc)
     return this.abc;
   }
-    
+
 
 
 }
+

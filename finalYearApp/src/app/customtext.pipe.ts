@@ -9,7 +9,20 @@ export class CustomTextPipe implements PipeTransform {
         if (!value) {
             return null
         }
-        let newVal = value.replace("&#039;", "'")
-        return newVal
+        if(value.match("&#039;")){
+            let newVal = value.replace("&#039;", "'")
+            return newVal
+
+        }
+        if(value.match("&#8217;")){
+            let newVal = value.replace("&#8217;", "'")
+            return newVal
+
+        }
+        if(value.match("&amp;")){
+            let newVal = value.replace("&amp;", "&")
+            return newVal
+        }
+        else return value
     }
 }

@@ -8,6 +8,7 @@ import { Chart } from 'chart.js';
   styleUrls: ['./polar-chart.component.scss'],
 })
 export class PolarChartComponent implements OnInit {
+  showButton: boolean;
   events: any[] = [];
   eventsIreland: any[] = [];
   events2006 = 0;
@@ -58,6 +59,7 @@ export class PolarChartComponent implements OnInit {
   sweden;
   israel;
   korea;
+  rest;
 
   Galway;
   Leitrim;
@@ -86,6 +88,9 @@ export class PolarChartComponent implements OnInit {
   Donegal;
   Monaghan;
 
+  display = true;
+  displayRest = false;
+
   constructor(private theSessionService: TheSessionService) { }
 
   getStats() {
@@ -96,6 +101,19 @@ export class PolarChartComponent implements OnInit {
           this.eventsIreland.push(event)
       });
     })
+  }
+
+
+  updatePie() {
+    if (this.display) {
+      this.display = false
+      this.displayRest = true
+      console.log("rest = " + this.displayRest + " display = " + this.display)
+    }
+    else{
+      this.display = true
+      this.displayRest = false
+    }
   }
 
   getYearCount(year) {
@@ -115,6 +133,7 @@ export class PolarChartComponent implements OnInit {
         count++;
       }
     }
+    console.log(count + " " + country)
     return count;
   }
 
@@ -165,6 +184,13 @@ export class PolarChartComponent implements OnInit {
       this.israel = this.getCount("Israel")
       this.korea = this.getCount("Korea - Republic")
 
+      this.rest = this.norway + this.finland + this.switzerland
+        + this.japan + this.austria + this.hungary + this.belgium
+        + this.italy + this.nZealand + this.thailand + this.spain
+        + this.denmark + this.puertoRico + this.czechRepublic +
+        this.mexico + this.netherlands + this.sweden + this.israel
+        + this.korea
+
       this.Galway = this.countCounties("Galway")
       this.Leitrim = this.countCounties("Leitrim")
       this.Mayo = this.countCounties("Mayo")
@@ -207,6 +233,11 @@ export class PolarChartComponent implements OnInit {
       this.events2018 = this.getYearCount("2018")
       this.events2019 = this.getYearCount("2019")
       this.events2020 = this.getYearCount("2020")
+
+      setTimeout(() => {
+        this.showButton = true;
+      }, 2000)
+
     }, 2500)
 
     setTimeout(() => {
@@ -245,10 +276,10 @@ export class PolarChartComponent implements OnInit {
             {
               label: "Events",
               borderColor: [
-                "#3e95cd"
+                "#42eff5",
               ],
               fill: false,
-              borderWidth: 0,
+              borderWidth: 4,
               data: [
                 this.Galway,
                 this.Leitrim,
@@ -289,6 +320,7 @@ export class PolarChartComponent implements OnInit {
         }
       });
 
+
       new Chart(document.getElementById("radar-chart"), {
         type: 'pie',
         data: {
@@ -302,78 +334,34 @@ export class PolarChartComponent implements OnInit {
             "Canada",
             "Germany",
             "France",
-            "Norway",
-            "Finland",
-            "Switzerland",
-            "Japan",
             "Wales",
-            "Austria",
-            "Hungary",
-            "Belgium'",
-            "Italy",
-            "New Zealand",
-            "Russian Fedaration (European Part)",
-            "Vietnam",
-            "Thailand",
             "Argentina",
-            "Spain",
-            "Denmark",
-            "Puerto Rico",
-            "Czech Republic",
-            "Mexico",
-            "Netherlands",
-            "Sweden",
-            "Israel",
-            "Korea"
+            "Rest of World"
           ],
           datasets: [
             {
               backgroundColor: [
-                "#800000",
-                "#FF7F50",
-                "#CD5C5C",
-                "#FFA07A",
-                "#FFD700",
-                "#DAA520",
-                "#EEE8AA",
-                "#808000",
-                "#9ACD32",
-                "#7CFC00",
-                "#006400",
-                "#00FF00",
-                "#98FB98",
-                "#00FF7F",
-                "#00FFFF",
-                "#00CED1",
-                "#7FFFD4",
-                "#4682B4",
-                "#1E90FF",
-                "#191970",
-                "#4169E1",
-                "#6A5ACD",
-                "#EE82EE",
-                "#FFC0CB",
-                "#FFE4C4",
-                "#D2691E",
-                "#FDF5E6",
-                "#B0C4DE",
-                "#F0FFF0",
-                "#87CEEB",
-                "#DDA0DD",
-                "#DA70D6",
-                "#FFEBCD",
-                "#ffc738", "#d4ff38", "#66ff38", "#38ff9f",
-                "#38ffee", "#38afff", "#384fff", "#8138ff", "#d138ff",
+                "#50bcd4",
+                "#50a4d4",
+                "#5096d4",
+                "#5083d4",
+                "#5073d4",
+                "#5068d4",
+                "#505bd4",
+                "#5750d4",
+                "#6450d4",
+                "#6f50d4",
+                "#7a50d4",
+                "#8550d4",
+                "#8e50d4",
+                "#9950d4",
+
 
               ],
               borderWidth: 0,
               data: [
                 this.ireland, this.australia, this.usa, this.england, this.scotland, this.nIreland,
-                this.canada, this.germany, this.france, this.norway, this.finland,
-                this.switzerland, this.japan, this.wales, this.austria, this.hungary, this.belgium,
-                this.italy, this.nZealand, this.russianFederation, this.vietnam, this.thailand,
-                this.argentina, this.spain, this.denmark, this.puertoRico, this.czechRepublic, this.mexico,
-                this.netherlands, this.sweden, this.israel, this.korea
+                this.canada, this.germany, this.france, this.wales, this.argentina, this.rest
               ]
             }
           ]
@@ -411,25 +399,25 @@ export class PolarChartComponent implements OnInit {
             {
               label: "Events",
               backgroundColor: [
-                "#800000",
-                "#FF7F50",
-                "#CD5C5C",
-                "#FFA07A",
-                "#FFD700",
-                "#DAA520",
-                "#EEE8AA",
-                "#808000",
-                "#9ACD32",
-                "#7CFC00",
-                "#006400",
-                "#00FF00",
-                "#98FB98",
-                "#00FF7F",
-                "#00FFFF",
-                "#00CED1",
-                "#7FFFD4",
-                "#4682B4",
-                "#1E90FF",
+                "#42f5cb",
+                "#42f5e9",
+                "#42e6f5",
+                "#42c2f5",
+                "#42aaf5",
+                "#429cf5",
+                "#4287f5",
+                "#4272f5",
+                "#4260f5",
+                "#424ef5",
+                "#4e42f5",
+                "#6342f5",
+                "#7542f5",
+                "#9042f5",
+                "#aa42f5",
+                "#bf42f5",
+                "#d742f5",
+                "#ef42f5",
+                "#ef42f5",
 
               ],
               borderWidth: 0,
@@ -454,11 +442,92 @@ export class PolarChartComponent implements OnInit {
           ]
         },
         options: {
-          maintainAspectRatio:false,
+          maintainAspectRatio: false,
           legend: { display: false },
           title: {
             display: true,
             text: 'Event Distribution per year'
+          }
+        }
+      });
+      new Chart(document.getElementById("radar-chart-rest"), {
+        type: 'pie',
+        data: {
+          labels: [
+            "Norway",
+            "Finland",
+            "Switzerland",
+            "Japan",
+            "Austria",
+            "Hungary",
+            "Belgium",
+            "Italy",
+            "New Zealand",
+            "Spain",
+            "Denmark",
+            "Puerto Rico",
+            "Czech Republic",
+            "Mexico",
+            "Netherlands",
+            "Sweden",
+            "Israel",
+            "Korea"
+          ],
+          datasets: [
+            {
+              backgroundColor: [
+                "#50bcd4",
+                "#50a4d4",
+                "#5096d4",
+                "#5083d4",
+                "#5073d4",
+                "#5068d4",
+                "#505bd4",
+                "#5750d4",
+                "#6450d4",
+                "#6f50d4",
+                "#7a50d4",
+                "#8550d4",
+                "#8e50d4",
+                "#9950d4",
+                "#9042f5",
+                "#aa42f5",
+                "#bf42f5",
+                "#d742f5",
+                "#ef42f5",
+                "#ef42f5",
+
+
+              ],
+              borderWidth: 0,
+              data: [
+                this.norway,
+                this.finland,
+                this.switzerland,
+                this.japan,
+                this.austria,
+                this.hungary,
+                this.belgium,
+                this.italy,
+                this.nZealand,
+                this.spain,
+                this.denmark,
+                this.puertoRico,
+                this.czechRepublic,
+                this.mexico,
+                this.netherlands,
+                this.sweden,
+                this.israel,
+                this.korea,
+              ]
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Event Distribution Rest of world"
           }
         }
       });

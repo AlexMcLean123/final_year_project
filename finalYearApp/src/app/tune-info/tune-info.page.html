@@ -1,8 +1,8 @@
 <ion-card class="blue-card">
   <ion-card-header text-center>
     <ion-card-title padding-bottom>{{tuneInformation?.name| CustomTextPipe }}</ion-card-title>
-    <!-- <h2></h2> -->
-    <div class="video-container" id="player"></div>
+    <div class="video-container" id="player">
+    </div>
 
   </ion-card-header>
 
@@ -23,12 +23,14 @@
           </ion-list>
         </ion-card>
       </ion-col>
+
       <ion-col>
         <ion-card class="blue-card">
           <ion-card-header>Notes</ion-card-header>
           <ion-card class="white">
             <ion-card-content>
-              <div padding id="paper1"></div>
+              <div [hidden] = "!displayNotes" (click) = "updateDiv()" padding id="paper1"></div>
+              <canvas [hidden] = "!displayBar" (click) = "updateDiv()" id ="bar-chart"></canvas>
             </ion-card-content>
           </ion-card>
         </ion-card>
@@ -39,33 +41,4 @@
 
   </ion-grid>
 
-
-
-
-
 </ion-content>
-
-
-<!-- <ion-content padding>
-  <ion-card>
-    <ion-grid>
-      <ion-row>
-        <ion-col *ngFor="let info of tuneInformation?.aliases">
-          <ion-card text-center>
-            <ion-card-title>{{info | CustomTextPipe }}</ion-card-title>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-</ion-content> -->
-
-<!-- <ion-item>
-    <ion-label>Tune Name: {{tuneInformation?.name| CustomTextPipe }}</ion-label>
-    <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="View Aliases">
-      <ion-select-option *ngFor="let info of tuneInformation?.aliases"> {{info | CustomTextPipe }}
-          <ion-spinner name="crescent" *ngIf="info == 0"></ion-spinner>
-
-         </ion-select-option>
-    </ion-select>
-  </ion-item> -->

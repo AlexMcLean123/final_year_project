@@ -35,10 +35,10 @@
               </ion-label>
             </ion-item>
             <ion-card-content padding>
-              <p>{{sessions?.venue.name}}</p>
-             <p>{{sessions?.town.name}},</p>
-              <p>County {{sessions?.area.name}},</p>
-              <p>{{sessions?.country.name}}</p>
+              <p>{{sessions?.venue.name | CustomTextPipe}},</p>
+             <p>{{sessions?.town.name | CustomTextPipe}},</p>
+              <p>County {{sessions?.area.name  | CustomTextPipe}},</p>
+              <p>{{sessions?.country.name | CustomTextPipe}}</p>
             </ion-card-content>
           </ion-card>
 
