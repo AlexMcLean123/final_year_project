@@ -15,7 +15,7 @@ export class TheSessionService {
   jsonAppender: String;
   num35: String;
   num10: String;
-  num50: String 
+  num50: String
 
   constructor(private http: HttpClient) {
     this.baseUrl = 'https://thesession.org/';
@@ -45,12 +45,17 @@ export class TheSessionService {
       tap(res => console.log('All: ' + JSON.stringify(res))), delay(1000));
   }
 
+  getTuneSets(id): Observable<any[]> {
+    return this.http.get<Tune[]>(this.baseUrl + 'tunes/' + id + '/sets' + this.jsonAppender).pipe(
+      tap(res => console.log('All: ' + JSON.stringify(res))));
+  }
+
   getSessions(): Observable<Session[]> {
     return this.http.get<Session[]>(this.baseUrl + 'sessions/new' + this.jsonAppender + this.num50).pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
-  
+
   getSession(id): Observable<Tune[]> {
     return this.http.get<Tune[]>(this.baseUrl + 'sessions/' + id + this.jsonAppender).pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
@@ -76,17 +81,17 @@ export class TheSessionService {
   getNews(topic): Observable<any[]> {
     let topicUri = encodeURI(topic)
     console.log(topicUri)
-    return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic +'&image=required'+ '&token=bb2c0b8b824b77d3e04beb164add122e').pipe(
+    return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic + '&image=required' + '&token=bb2c0b8b824b77d3e04beb164add122e').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
-  getStats(): Observable<any[]>{
+  getStats(): Observable<any[]> {
     return this.http.get<any[]>('./assets/tunes1.json').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
-  
-  getEventStats(): Observable<any[]>{
+
+  getEventStats(): Observable<any[]> {
     return this.http.get<any[]>('./assets/events1.json').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }

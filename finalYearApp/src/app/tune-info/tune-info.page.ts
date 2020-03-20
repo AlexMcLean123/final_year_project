@@ -29,6 +29,7 @@ export class TuneInfoPage implements OnInit {
   videoId: any[] = [];
   displayNotes = true;
   displayBar = false;
+  tuneSets: any;
   constructor(private activatedRoute: ActivatedRoute, private service: TheSessionService) {
     this.abcFormatter = new AbcFormatter();
   }
@@ -54,8 +55,10 @@ export class TuneInfoPage implements OnInit {
       console.log(this.tuneInformation.tunebooks)
       console.log(this.tuneInformation.recordings)
       console.log(this.tuneInformation.collections)
-
-
+    })
+    this.service.getTuneSets(id).subscribe(tuneSets => {
+      this.tuneSets = tuneSets
+      console.log("sets : " + this.tuneSets.total)
     })
   }
 
@@ -109,29 +112,51 @@ export class TuneInfoPage implements OnInit {
           labels: [
             "TuneBooks",
             "Collections",
-            "Recordings"
+            "Recordings",
+            "Sets"
+
           ],
           datasets: [
             {
-              label: "Key",
               backgroundColor: [
                 "#42f5c2",
                 "#42c5f5",
-                "#ff5252"
+                "#ff5252",
+                "#ffeb52"
               ],
               data: [
-                this.tuneInformation.tunebooks/100,
+                this.tuneInformation.tunebooks,
                 this.tuneInformation.collections,
-                this.tuneInformation.recordings
+                this.tuneInformation.recordings,
+                this.tuneSets.total
               ]
             }
           ]
         },
         options: {
+          scales: {
+            yAxes:[{
+              type: 'logarithmic',
+              scaleLabel: {
+                display: false
+              },
+               gridLines: {
+                display:false
+            }   
+            }],
+            xAxes:[{
+              scaleLabel: {
+                display: false
+              },
+              gridLines: {
+                display:false
+            }   
+            }]
+          },
           legend: { display: false },
           title: {
             display: true,
-            text: 'TuneBooks, Collections and Recordings'
+            text: 'TuneBooks, Collections, Recordings and Sets'
           }
         }
       });

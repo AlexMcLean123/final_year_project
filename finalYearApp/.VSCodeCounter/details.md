@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-02-29 21:37:19
+Date : 2020-03-03 22:41:44
 
 Directory c:\Users\alimc\Desktop\final_year_project\finalYearApp
 
-Total : 101 files,  55111 codes, 406 comments, 538 blanks, all 56055 lines
+Total : 103 files,  95876 codes, 395 comments, 539 blanks, all 96810 lines
 
 [summary](results.md)
 
@@ -30,24 +30,24 @@ Total : 101 files,  55111 codes, 406 comments, 538 blanks, all 56055 lines
 | [src/app/components/bar-chart/bar-chart.component.html](/src/app/components/bar-chart/bar-chart.component.html) | HTML | 12 | 0 | 0 | 12 |
 | [src/app/components/bar-chart/bar-chart.component.scss](/src/app/components/bar-chart/bar-chart.component.scss) | SCSS | 0 | 0 | 1 | 1 |
 | [src/app/components/bar-chart/bar-chart.component.spec.ts](/src/app/components/bar-chart/bar-chart.component.spec.ts) | TypeScript | 19 | 0 | 7 | 26 |
-| [src/app/components/bar-chart/bar-chart.component.ts](/src/app/components/bar-chart/bar-chart.component.ts) | TypeScript | 133 | 0 | 14 | 147 |
+| [src/app/components/bar-chart/bar-chart.component.ts](/src/app/components/bar-chart/bar-chart.component.ts) | TypeScript | 151 | 0 | 11 | 162 |
 | [src/app/components/do-chart/do-chart.component.html](/src/app/components/do-chart/do-chart.component.html) | HTML | 3 | 0 | 1 | 4 |
 | [src/app/components/do-chart/do-chart.component.scss](/src/app/components/do-chart/do-chart.component.scss) | SCSS | 0 | 0 | 1 | 1 |
 | [src/app/components/do-chart/do-chart.component.spec.ts](/src/app/components/do-chart/do-chart.component.spec.ts) | TypeScript | 19 | 0 | 6 | 25 |
-| [src/app/components/do-chart/do-chart.component.ts](/src/app/components/do-chart/do-chart.component.ts) | TypeScript | 101 | 0 | 10 | 111 |
-| [src/app/components/polar-chart/polar-chart.component.html](/src/app/components/polar-chart/polar-chart.component.html) | HTML | 22 | 0 | 2 | 24 |
+| [src/app/components/do-chart/do-chart.component.ts](/src/app/components/do-chart/do-chart.component.ts) | TypeScript | 110 | 0 | 11 | 121 |
+| [src/app/components/polar-chart/polar-chart.component.html](/src/app/components/polar-chart/polar-chart.component.html) | HTML | 22 | 0 | 1 | 23 |
 | [src/app/components/polar-chart/polar-chart.component.scss](/src/app/components/polar-chart/polar-chart.component.scss) | SCSS | 0 | 0 | 1 | 1 |
 | [src/app/components/polar-chart/polar-chart.component.spec.ts](/src/app/components/polar-chart/polar-chart.component.spec.ts) | TypeScript | 19 | 0 | 7 | 26 |
-| [src/app/components/polar-chart/polar-chart.component.ts](/src/app/components/polar-chart/polar-chart.component.ts) | TypeScript | 417 | 1 | 25 | 443 |
+| [src/app/components/polar-chart/polar-chart.component.ts](/src/app/components/polar-chart/polar-chart.component.ts) | TypeScript | 509 | 1 | 30 | 540 |
 | [src/app/countryPipe.pipe.ts](/src/app/countryPipe.pipe.ts) | TypeScript | 13 | 0 | 3 | 16 |
-| [src/app/customtext.pipe.ts](/src/app/customtext.pipe.ts) | TypeScript | 13 | 0 | 2 | 15 |
+| [src/app/customtext.pipe.ts](/src/app/customtext.pipe.ts) | TypeScript | 24 | 0 | 4 | 28 |
 | [src/app/event-info/event-info.module.ts](/src/app/event-info/event-info.module.ts) | TypeScript | 24 | 0 | 3 | 27 |
 | [src/app/event-info/event-info.page.html](/src/app/event-info/event-info.page.html) | HTML | 66 | 1 | 7 | 74 |
 | [src/app/event-info/event-info.page.scss](/src/app/event-info/event-info.page.scss) | SCSS | 0 | 0 | 1 | 1 |
 | [src/app/event-info/event-info.page.spec.ts](/src/app/event-info/event-info.page.spec.ts) | TypeScript | 19 | 0 | 7 | 26 |
 | [src/app/event-info/event-info.page.ts](/src/app/event-info/event-info.page.ts) | TypeScript | 55 | 1 | 15 | 71 |
 | [src/app/events/events.module.ts](/src/app/events/events.module.ts) | TypeScript | 26 | 0 | 3 | 29 |
-| [src/app/events/events.page.html](/src/app/events/events.page.html) | HTML | 45 | 41 | 4 | 90 |
+| [src/app/events/events.page.html](/src/app/events/events.page.html) | HTML | 45 | 43 | 4 | 92 |
 | [src/app/events/events.page.scss](/src/app/events/events.page.scss) | SCSS | 0 | 0 | 1 | 1 |
 | [src/app/events/events.page.spec.ts](/src/app/events/events.page.spec.ts) | TypeScript | 19 | 0 | 6 | 25 |
 | [src/app/events/events.page.ts](/src/app/events/events.page.ts) | TypeScript | 47 | 40 | 20 | 107 |
@@ -88,17 +88,19 @@ Total : 101 files,  55111 codes, 406 comments, 538 blanks, all 56055 lines
 | [src/app/statistics/statistics.page.spec.ts](/src/app/statistics/statistics.page.spec.ts) | TypeScript | 19 | 0 | 6 | 25 |
 | [src/app/statistics/statistics.page.ts](/src/app/statistics/statistics.page.ts) | TypeScript | 47 | 0 | 15 | 62 |
 | [src/app/tune-info/tune-info.module.ts](/src/app/tune-info/tune-info.module.ts) | TypeScript | 26 | 0 | 3 | 29 |
-| [src/app/tune-info/tune-info.page.html](/src/app/tune-info/tune-info.page.html) | HTML | 34 | 23 | 14 | 71 |
+| [src/app/tune-info/tune-info.page.html](/src/app/tune-info/tune-info.page.html) | HTML | 36 | 0 | 8 | 44 |
 | [src/app/tune-info/tune-info.page.scss](/src/app/tune-info/tune-info.page.scss) | SCSS | 4 | 0 | 0 | 4 |
 | [src/app/tune-info/tune-info.page.spec.ts](/src/app/tune-info/tune-info.page.spec.ts) | TypeScript | 19 | 0 | 6 | 25 |
-| [src/app/tune-info/tune-info.page.ts](/src/app/tune-info/tune-info.page.ts) | TypeScript | 152 | 5 | 26 | 183 |
+| [src/app/tune-info/tune-info.page.ts](/src/app/tune-info/tune-info.page.ts) | TypeScript | 204 | 5 | 31 | 240 |
 | [src/app/tunes/tunes.module.ts](/src/app/tunes/tunes.module.ts) | TypeScript | 26 | 0 | 4 | 30 |
-| [src/app/tunes/tunes.page.html](/src/app/tunes/tunes.page.html) | HTML | 39 | 8 | 3 | 50 |
+| [src/app/tunes/tunes.page.html](/src/app/tunes/tunes.page.html) | HTML | 22 | 18 | 1 | 41 |
 | [src/app/tunes/tunes.page.scss](/src/app/tunes/tunes.page.scss) | SCSS | 4 | 0 | 2 | 6 |
 | [src/app/tunes/tunes.page.spec.ts](/src/app/tunes/tunes.page.spec.ts) | TypeScript | 19 | 0 | 6 | 25 |
 | [src/app/tunes/tunes.page.ts](/src/app/tunes/tunes.page.ts) | TypeScript | 61 | 0 | 12 | 73 |
 | [src/assets/events.json](/src/assets/events.json) | JSON | 5,232 | 0 | 0 | 5,232 |
+| [src/assets/events1.json](/src/assets/events1.json) | JSON | 5,348 | 0 | 0 | 5,348 |
 | [src/assets/tunes.json](/src/assets/tunes.json) | JSON | 34,601 | 0 | 0 | 34,601 |
+| [src/assets/tunes1.json](/src/assets/tunes1.json) | JSON | 35,250 | 0 | 0 | 35,250 |
 | [src/environments/environment.prod.ts](/src/environments/environment.prod.ts) | TypeScript | 3 | 0 | 1 | 4 |
 | [src/environments/environment.ts](/src/environments/environment.ts) | TypeScript | 3 | 11 | 3 | 17 |
 | [src/global.scss](/src/global.scss) | SCSS | 19 | 17 | 9 | 45 |

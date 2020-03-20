@@ -37,8 +37,10 @@ export class DoChartComponent implements OnInit {
 
   getCount(type) {
     var count = 0;
-    for (var i = 0; i < this.types.length; i++) {
-      if (this.types[i].type == type) {
+    var id = 0;
+    for (var i = 1; i < this.types.length; i++) {
+      id = this.types[i].tune;
+      if (this.types[i].type == type && id != this.types[i - 1].tune) {
         count++;
       }
     }
@@ -69,7 +71,8 @@ export class DoChartComponent implements OnInit {
       new Chart(document.getElementById("doughnut-chart"), {
         type: 'doughnut',
         data: {
-          labels: ["Jigs",
+          labels: [
+            "Jigs",
             "Reels",
             "Slip Jigs",
             "Horn Pipes",
@@ -85,7 +88,6 @@ export class DoChartComponent implements OnInit {
           ],
           datasets: [
             {
-              label: "Key",
               backgroundColor: [
                 "#bdeb34",
                 "#93eb34",
@@ -98,11 +100,22 @@ export class DoChartComponent implements OnInit {
                 "#34eba2",
                 "#34ebba",
                 "#34ebd6",
-                
+                "#34d6eb"
+
               ],
               data: [
-                this.noJigs, this.noReel, this.noSlipJig, this.noHornPipe, this.noWaltz, this.noSlide,
-                this.noMarch, this.noBarndance, this.noThreeTwo, this.noMazurka, this.noStrathspey
+                this.noJigs,
+                this.noReel,
+                this.noSlipJig,
+                this.noHornPipe,
+                this.noWaltz,
+                this.noPolka,
+                this.noSlide,
+                this.noMarch,
+                this.noBarndance,
+                this.noThreeTwo,
+                this.noMazurka,
+                this.noStrathspey
               ]
             }
           ]
