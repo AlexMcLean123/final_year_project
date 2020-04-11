@@ -315,7 +315,7 @@ export class PolarChartComponent implements OnInit {
           legend: { display: false },
           title: {
             display: true,
-            text: 'Event distribution in irish counties'
+            text: 'Event Distribution in irish counties'
           }
         }
       });
@@ -370,7 +370,7 @@ export class PolarChartComponent implements OnInit {
           legend: { display: false },
           title: {
             display: true,
-            text: "Event Distribution all over the world"
+            text: "The Composition of events from all over the world"
           }
         }
       });
@@ -527,7 +527,7 @@ export class PolarChartComponent implements OnInit {
           legend: { display: false },
           title: {
             display: true,
-            text: "Event Distribution Rest of world"
+            text: "The Composition of events from the rest of the world"
           }
         }
       });

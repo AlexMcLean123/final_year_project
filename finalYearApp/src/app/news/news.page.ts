@@ -24,7 +24,7 @@ export class NewsPage implements OnInit {
 
 
   ngOnInit() {
-    let topic = "traditional irish music"
+    let topic = "traditional irish music" 
     this.getNews(topic)
   }
 

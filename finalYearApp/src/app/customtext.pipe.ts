@@ -23,6 +23,10 @@ export class CustomTextPipe implements PipeTransform {
             let newVal = value.replace("&amp;", "&")
             return newVal
         }
+        if(value.match("&quot;")){
+            let newVal = value.replace("&quot;", "\"")
+            return newVal
+        }
         else return value
     }
 }

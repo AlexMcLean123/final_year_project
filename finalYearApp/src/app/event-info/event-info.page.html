@@ -3,10 +3,10 @@
       <ion-thumbnail slot="start">
         <img src="/assets/png/{{events?.country.name}}.png">
       </ion-thumbnail>
-      <ion-label>{{events?.country.name|CustomTextPipe}}</ion-label>
+      <ion-label>{{events?.country.name | CustomTextPipe }}</ion-label>
     </ion-item>
     <ion-card-header>
-      <ion-card-title>{{events?.venue.name|CustomTextPipe}}</ion-card-title>
+      <ion-card-title>{{events?.venue.name | CustomTextPipe }}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
@@ -17,12 +17,12 @@
             <ion-card class="white">
               <ion-item>
                 <ion-icon padding name="md-mail"></ion-icon>
-                <ion-label> <a href="mailto:{{events?.venue.email}}">{{events?.venue.name |CustomTextPipe}} Email</a>
+                <ion-label> <a href="mailto:{{events?.venue.email | CustomTextPipe }}">{{events?.venue.name |CustomTextPipe}} Email</a>
                 </ion-label>
               </ion-item>
               <ion-item>
                 <ion-icon padding name="md-globe"></ion-icon>
-                <ion-label> <a href="{{events?.venue.web}}">{{events?.venue.name|CustomTextPipe}} Website</a>
+                <ion-label> <a href="{{events?.venue.web | CustomTextPipe }}">{{events?.venue.name|CustomTextPipe}} Website</a>
                 </ion-label>
               </ion-item>
             </ion-card>

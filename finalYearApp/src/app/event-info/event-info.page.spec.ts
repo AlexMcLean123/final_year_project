@@ -14,7 +14,9 @@ describe('EventInfoPage', () => {
     })
     .compileComponents();
   }));
-
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
   beforeEach(() => {
     fixture = TestBed.createComponent(EventInfoPage);
     component = fixture.componentInstance;

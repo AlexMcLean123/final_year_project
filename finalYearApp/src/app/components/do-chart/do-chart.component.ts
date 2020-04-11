@@ -124,7 +124,7 @@ export class DoChartComponent implements OnInit {
           legend: { display: false },
           title: {
             display: true,
-            text: 'Type Distributuon of tunes'
+            text: 'Type Composition of tunes'
           }
         }
       });

@@ -150,7 +150,7 @@ export class BarChartComponent implements OnInit {
           legend: { display: false },
           title: {
             display: true,
-            text: 'Key Distributuon of tunes'
+            text: 'Key Distribution of tunes'
           }
         }
       });

@@ -48,51 +48,6 @@ export class EventsPage implements OnInit {
     })
   }
 
-
-  // leafletMap() {
-  //   this.map = new Map('mapId').setView([53.381210, -6.5918], 2);
-  //   tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  //     attribution: 'The Session.org',
-  //   }).addTo(this.map);
-  //   setTimeout(() => {
-  //     this.map.invalidateSize();
-  //   }, 2000);
-  //   console.log("array", this.sessions)
-  //   console.log("length", this.sessions.length)
-
-  // }
-
-  // onClickSession() {
-  //   this.map.remove()
-  //   this.leafletMap()
-  //   console.log("session clicked")
-  //   this.sessions.forEach(element => {
-  //     var location = "Theres a session at " + element.venue.name + " in " + element.area.name + ", " + element.country.name + "!";
-  //     marker([element.latitude, element.longitude], { icon: this.defaultIcon }).addTo(this.map)
-  //       .bindPopup(location)
-  //       .openPopup()
-  //   });
-  // }
-
-  // onClickEvent() {
-  //   this.map.remove()
-  //   this.leafletMap()
-  //   console.log("Event clicked")
-  //   this.events.forEach(element => {
-  //     var location = "Theres an event on at " + element.venue.name + " in " + element.area.name + ", " + element.country.name + "!";
-  //     marker([element.latitude, element.longitude], { icon: this.defaultIcon }).addTo(this.map)
-  //       .bindPopup(location)
-  //       .openPopup()
-  //   });
-  // }
-
-  /** Remove map when we have multiple map object */
-
-  // ionViewDidEnter() {
-  //   // this.getSessions();
-  //   this.leafletMap();
-  // }
-
   ionViewWillLeave() {
     this.map.remove();
   }

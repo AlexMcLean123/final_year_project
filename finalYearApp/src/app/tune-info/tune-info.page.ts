@@ -136,9 +136,12 @@ export class TuneInfoPage implements OnInit {
         options: {
           scales: {
             yAxes:[{
+              ticks: {
+                display: false
+            },
               type: 'logarithmic',
               scaleLabel: {
-                display: false
+                display:false
               },
                gridLines: {
                 display:false
@@ -146,17 +149,17 @@ export class TuneInfoPage implements OnInit {
             }],
             xAxes:[{
               scaleLabel: {
-                display: false
+                display:false
               },
               gridLines: {
                 display:false
             }   
             }]
           },
-          legend: { display: false },
+          legend: { display:false },
           title: {
-            display: true,
-            text: 'TuneBooks, Collections, Recordings and Sets'
+            display:true,
+            text: 'Number of TuneBooks, Collections, Recordings and Sets ' +  this.tuneInformation.name + ' appears in.'
           }
         }
       });

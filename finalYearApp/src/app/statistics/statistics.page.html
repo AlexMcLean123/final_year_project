@@ -1,5 +1,5 @@
 <ion-content>
-    <ion-card class="blue-card">
+    <ion-card class ="blue-card">
         <ion-grid>
             <ion-row>
                 <ion-col>
@@ -7,12 +7,12 @@
                         <ion-card-header>
                             <ion-item>
                                 <ion-icon name="stats" slot="start"></ion-icon>
-                                <ion-button (click)="updateBar()" fill="outline" slot="end">View Dashboard</ion-button>
+                                <ion-button name ="tunes" (click)="updateBar()" fill="outline" slot="end">View Dashboard</ion-button>
                             </ion-item>
                             <ion-card-title>Tunes</ion-card-title>
                         </ion-card-header>
                         <ion-card-content>
-                            View the distribtuion of keys and the distribution of type from a dataset of over 34,000 traditional irish songs.
+                            View dashboard of data from over 34,000 traditional irish songs.
                         </ion-card-content>
                     </ion-card>
                 </ion-col>
@@ -23,13 +23,13 @@
                         <ion-card-header>
                             <ion-item>
                                 <ion-icon name="pie" slot="start"></ion-icon>
-                                <ion-button (click)="updatePie()" fill="outline" slot="end">View Dashboard</ion-button>
+                                <ion-button name = "events" (click)="updatePie()" fill="outline" slot="end">View Dashboard</ion-button>
                             </ion-item>
                             <ion-card-title>Events</ion-card-title>
                         </ion-card-header>
 
                         <ion-card-content>
-                            View events distributed over countries, counties and years from a dataset of over 7,500 events worldwide.
+                            View a dashboard of data from over 7,500 events worldwide.
                         </ion-card-content>
                     </ion-card>
                 </ion-col>
