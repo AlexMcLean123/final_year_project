@@ -74,14 +74,14 @@ export class TheSessionService {
   getVideoID(name): Observable<any[]> {
     let nameUri = encodeURI(name);
     console.log(nameUri)
-    return this.http.get<any[]>('https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=' + nameUri + '&type=video&videoDefinition=high&key=AIzaSyAzb2LyeEDe82S-rC5G58-Pc4dUrwmhEhA').pipe(
+    return this.http.get<any[]>('https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=' + nameUri + '&type=video&videoDefinition=high&key=X').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
   getNews(topic): Observable<any[]> {
     let topicUri = encodeURI(topic)
     console.log(topicUri)
-    return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic + '&image=required' + '&token=bb2c0b8b824b77d3e04beb164add122e').pipe(
+    return this.http.get<any[]>('https://gnews.io/api/v3/search?q=' + topic + '&image=required' + '&token=X').pipe(
       tap(res => console.log('All: ' + JSON.stringify(res))));
   }
 
